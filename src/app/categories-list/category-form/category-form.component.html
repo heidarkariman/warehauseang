@@ -1,0 +1,14 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput formControlName="name" placeholder="Name" required>
+      <mat-error *ngIf="form.get('name')?.invalid">Name is required</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <textarea matInput formControlName="description" placeholder="Description" required></textarea>
+      <mat-error *ngIf="form.get('description')?.invalid">Description is required</mat-error>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit">{{ category ? 'Save' : 'Create' }}</button>
+  </form>
+  
